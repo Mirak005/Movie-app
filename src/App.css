@@ -1,38 +1,196 @@
-.App {
+/* Movie Card*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button,
+input:focus {
+  outline: 0;
+}
+::placeholder {
+  opacity: 0.5;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(43, 25, 25, 0.418);
+}
+
+.search-input {
+  width: 60%;
+  height: 50px;
+   border: 1px solid  #b6b5b37a;
+  background-color: rgba(252, 252, 252, 0.918);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.button-search {
+  height: 50px;
+  width: 10%;
+   border: 1px solid  #b6b5b37a;
+  border-left: none;
+  background-color: white;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: rgba(184, 82, 82, 0.836);
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.button-search:hover {
+  background-color: rgba(184, 82, 82, 0.836);
+  color: white;
+  transition: 0.3s;
+}
+
+.rating-search {
+  margin-left: 60px;
+  font-size: 18px;
+  border: 1px solid  #b6b5b37a;
+  border-radius:6px ;
+  background-color: white;
+  color: rgba(184, 82, 82, 0.836);
   text-align: center;
+  width: 200px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rating-star-search {
+  font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movie-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 12% 15%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.movie-card {
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  border: 1px solid rgba(27, 71, 71, 0.253);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 270px;
+  height: 450px;
+  margin: 20px;
+  border: 1px solid  #b6b5b37a;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(7, 7, 7, 0.781);
+  color: rgb(255, 255, 255);
+  
+}
+.rating-star {
+  font-size: 28px;
+  align-self: flex-end;
+}
+.movieImage {
+  width: 270px;
+  height: 330px;
+  /* border-top: 2px solid  rgba(248, 100, 80, 0.836);
+  border-bottom: 2px solid  rgba(248, 100, 80, 0.836); */
+  
+}
+.movie-card h3,
+.movie-card p {
+  text-align: center;
+  margin: 5px 0;
+  font-size: 20px;
+  
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* height: 450px;
+  width: 300px; */
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.overlay img {
+  height: 100px;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(50%, 50%);
+ margin: 15%;
+}
+.movie-card:hover .overlay {
+  height: 100%;
+  background-color: rgba(90, 118, 212, 0.288);
+  opacity: 0.5;
+}
+.addMovie {
+    border: 1px solid rgba(27, 71, 71, 0.253);
+    align-items: center;
+    width: 300px;
+    height: 450px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: black;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+    cursor: pointer;
+  }
+  .logoAdd:hover{
+    height:220px;
+    width:220px;
+    transition:  all 0.2s ease-out;;
+  }
+  .logoAdd{
+    height:180px;
+    width:180px;
+  }
+
+  .form-container{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      height: 500px;
+      width: 500px;
+      padding: 30px;
+
+  }
+  .form-title{
+     align-self: center;
+  }
+  .form-container input{
+      border-radius: 6px;
+      height: 30px;
+      width: 450px;
+      align-self: flex-start;
+      border:1px solid rgba(29, 80, 138, 0.527);
+  }
+.btn-container{
+    align-self: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .btn-container button{
+      width: 80px;
+      height: 35px;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: rgba(13, 29, 99, 0.6);
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
