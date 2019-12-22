@@ -79,7 +79,6 @@ header {
 
 .movie-card {
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
-  border: 1px solid rgba(27, 71, 71, 0.253);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +91,11 @@ header {
   position: relative;
   background-color: rgba(7, 7, 7, 0.781);
   color: rgb(255, 255, 255);
-  
+  animation: fadein 0.5s;  
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 .rating-star {
   font-size: 28px;
@@ -131,7 +134,7 @@ header {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(50%, 50%);
- margin: 15%;
+ margin: 40% 15%;
 }
 .movie-card:hover .overlay {
   height: 100%;
@@ -155,22 +158,23 @@ margin: 10%;
 .addMovie {
     border: 1px solid rgba(27, 71, 71, 0.253);
     align-items: center;
-    width: 300px;
+    width: 270px;
     height: 450px;
     margin: 20px;
     border-radius: 8px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.336);
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
     cursor: pointer;
   }
   .logoAdd:hover{
     height:220px;
     width:220px;
-    transition:  all 0.2s ease-out;;
+    transition:  all 0.2s ease-out;
   }
   .logoAdd{
     height:180px;
     width:180px;
+    transition:  all 0.2s ease-out;
   }
 
   .form-container{

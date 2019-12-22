@@ -9,19 +9,19 @@ export const movieData= [
       name: "Ad Astra",
       year: "2019",
       image: "https://image.tmdb.org/t/p/w500/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg",
-      rating: 3
+      rating: 2
     },
     {
       name: "The Great Escape",
       year: "1969",
       image: "https://cdn-egy.unblocked2.vip/serve/movies/art-0020043465-x300.jpg",
-      rating: 3
+      rating: 5
     },
     {
-      name: "kariiiimmmsdsdsd",
-      year: "1969",
-      image:"https://cdn-egy.unblocked2.vip/serve/movies/art-0020043465-x300.jpg",
-      rating: 5
+      name: "Batman Begins",
+      year: "2005",
+      image:"https://image.tmdb.org/t/p/w500/dr6x4GyyegBWtinPBzipY02J2lV.jpg",
+      rating: 3
     },
     
     {
@@ -39,8 +39,7 @@ export const movieData= [
     {
       name: "Fantastic Beasts ",
       year: "2016",
-      image:
-        "https://image.tmdb.org/t/p/w500/1M91Bt3oGspda75H9eLqYZkJzgO.jpg",
+      image:"https://image.tmdb.org/t/p/w500/1M91Bt3oGspda75H9eLqYZkJzgO.jpg",
       rating: 2
     },
     {
@@ -51,11 +50,10 @@ export const movieData= [
       rating: 1
     },
     {
-      name: "Wayne's World",
-      year: "1992",
-      image:
-        "https://image.tmdb.org/t/p/w500/rsgklbt5KxeuUuchehnLACxzisP.jpg",
-      rating: 1
+      name: "12 Monkeys",
+      year: "1995",
+      image:"https://image.tmdb.org/t/p/w500/6Sj9wDu3YugthXsU0Vry5XFAZGg.jpg",
+      rating: 4
     }
 
   ]
