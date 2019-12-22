@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "./components/MovieCard";
+import MovieList from "./components/MovieList";
 import Header from "./components/Header"
 import FormAdd from "./components/FormAdd";
 import {movieData} from './components/data'
@@ -20,15 +20,42 @@ class App extends React.Component {
       image: "",
       rating: ""
     },
-    search:""
+    search:"",
+    isLoading:false
+    /*the state of is loading is false ,
+     on event the state change to true
+      and the setTimeout will return it state to false 
+    */
   };
-  // handelSearchClick=()=>{
-  // this.movieData.map(movie=>this.state.rating<=movie.rating && movie.name.toLowerCase().includes(this.state.search.toLowerCase().trim())?movie:null)
+ 
 
-  // }
+getVisibileData=()=>{
+  console.log( this.state.movieData.filter(movie=> 
+    this.state.rating <= movie.rating&& 
+    movie.name
+    .toLowerCase()
+    .includes(this.state.search.toLowerCase().trim())))
+  return  this.state.movieData.filter(movie=> 
+    this.state.rating <= movie.rating&& 
+    movie.name
+    .toLowerCase()
+    .includes(this.state.search.toLowerCase().trim()))
+  }
 
   
-handelSearch=(e)=>this.setState({search:e.target.value})
+handelSearch=(e)=>{
+  //fake loading
+  setTimeout(()=>this.setState({isLoading:false}),1500)
+  this.setState({search:e.target.value,isLoading:true});
+  
+  
+}
+
+onStarClick=(nextValue)=> {
+  //fake loading
+  setTimeout(()=>this.setState({isLoading:false}),1500)
+  this.setState({ rating: nextValue,isLoading:true });
+}
 
   openModal = () => {
     this.setState({ modalIsOpen: true });
@@ -37,16 +64,14 @@ handelSearch=(e)=>this.setState({search:e.target.value})
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   };
-  onStarClick=(nextValue)=> {
-    this.setState({ rating: nextValue });
-  }
-
+  
   handelName = e => {
     this.setState({
       movieAdd: { ...this.state.movieAdd, name: e.target.value }
     });
   };
   handelRating = e => {
+    
     this.setState({
       movieAdd: {
         ...this.state.movieAdd,
@@ -101,7 +126,7 @@ handelSearch=(e)=>this.setState({search:e.target.value})
       <div>
         <Header rating={this.state.rating}  onStarClick={this.onStarClick} handelSearch={this.handelSearch}/>
         <div className="movie-list-container">
-          <MovieCard movie={this.state.movieData} search={this.state.search} rating={this.state.rating}/>
+          <MovieList movie={this.getVisibileData()} isLoading={this.state.isLoading}/>
           <button className="addMovie" onClick={this.openModal}>
             <img className="logoAdd" src={add}  alt="Fail to load"/>
           </button>
