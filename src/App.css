@@ -20,16 +20,16 @@ header {
   padding: 20px;
   overflow: hidden;
   position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    background-color: rgba(43, 25, 25, 0.418);
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(43, 25, 25, 0.418);
 }
 
 .search-input {
   width: 60%;
   height: 50px;
-   border: 1px solid  #b6b5b37a;
+  border: 1px solid #b6b5b37a;
   background-color: rgba(252, 252, 252, 0.918);
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -39,7 +39,7 @@ header {
 .button-search {
   height: 50px;
   width: 10%;
-   border: 1px solid  #b6b5b37a;
+  border: 1px solid #b6b5b37a;
   border-left: none;
   background-color: white;
   border-top-right-radius: 8px;
@@ -58,8 +58,8 @@ header {
 .rating-search {
   margin-left: 60px;
   font-size: 18px;
-  border: 1px solid  #b6b5b37a;
-  border-radius:6px ;
+  border: 1px solid #b6b5b37a;
+  border-radius: 6px;
   background-color: white;
   color: rgba(184, 82, 82, 0.836);
   text-align: center;
@@ -76,7 +76,6 @@ header {
   margin: 12% 15%;
 }
 
-
 .movie-card {
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
   display: flex;
@@ -85,17 +84,21 @@ header {
   width: 270px;
   height: 450px;
   margin: 20px;
-  border: 1px solid  #b6b5b37a;
+  border: 1px solid #b6b5b37a;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
   background-color: rgba(7, 7, 7, 0.781);
   color: rgb(255, 255, 255);
-  animation: fadein 0.5s;  
+  animation: fadein 0.5s;
 }
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .rating-star {
   font-size: 28px;
@@ -106,14 +109,12 @@ header {
   height: 330px;
   /* border-top: 2px solid  rgba(248, 100, 80, 0.836);
   border-bottom: 2px solid  rgba(248, 100, 80, 0.836); */
-  
 }
 .movie-card h3,
 .movie-card p {
   text-align: center;
   margin: 5px 0;
   font-size: 20px;
-  
 }
 .overlay {
   position: absolute;
@@ -134,7 +135,7 @@ header {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(50%, 50%);
- margin: 40% 15%;
+  margin: 40% 15%;
 }
 .movie-card:hover .overlay {
   height: 100%;
@@ -142,113 +143,109 @@ header {
   opacity: 0.5;
 }
 
-.noResult{
-width:100%;
-height: 60px;
-margin: 10%;
-
+.noResult {
+  width: 100%;
+  height: 60px;
+  margin: 10%;
 }
-.noResult h6{
+.noResult h6 {
   color: white;
   font-size: 50px;
   text-align: center;
 }
 
-
 .addMovie {
-    border: 1px solid rgba(27, 71, 71, 0.253);
-    align-items: center;
-    width: 270px;
-    height: 450px;
-    margin: 20px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.336);
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
-    cursor: pointer;
-  }
-  .logoAdd:hover{
-    height:220px;
-    width:220px;
-    transition:  all 0.2s ease-out;
-  }
-  .logoAdd{
-    height:180px;
-    width:180px;
-    transition:  all 0.2s ease-out;
-  }
-
-  .form-container{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-around;
-      height: 500px;
-      width: 500px;
-      padding: 30px;
-
-  }
-  .form-title{
-     align-self: center;
-  }
-  .form-container input{
-      border-radius: 6px;
-      height: 30px;
-      width: 450px;
-      align-self: flex-start;
-      border:1px solid rgba(29, 80, 138, 0.527);
-  }
-.btn-container{
-    align-self: center;
+  border: 1px solid rgba(27, 71, 71, 0.253);
+  align-items: center;
+  width: 270px;
+  height: 450px;
+  margin: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.336);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.411);
+  cursor: pointer;
+}
+.logoAdd:hover {
+  height: 220px;
+  width: 220px;
+  transition: all 0.2s ease-out;
+}
+.logoAdd {
+  height: 180px;
+  width: 180px;
+  transition: all 0.2s ease-out;
 }
 
-  .btn-container button{
-      width: 80px;
-      height: 35px;
-      margin: 10px;
-      border: 1px solid black;
-      border-radius: 5px;
-      background-color: rgba(13, 29, 99, 0.6);
-      font-size: 18px;
-      color: white;
-      cursor: pointer;
-  }
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 500px;
+  width: 500px;
+  padding: 30px;
+}
+.form-title {
+  align-self: center;
+}
+.form-container input {
+  border-radius: 6px;
+  height: 30px;
+  width: 450px;
+  align-self: flex-start;
+  border: 1px solid rgba(29, 80, 138, 0.527);
+}
+.btn-container {
+  align-self: center;
+}
 
-  /* spinner styling */
-  .lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-    /*center the spinner*/
-    margin: 20% 45%;
+.btn-container button {
+  width: 80px;
+  height: 35px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(13, 29, 99, 0.6);
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* spinner styling */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  /*center the spinner*/
+  margin: 20% 45%;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
   }
-  .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+  100% {
+    transform: rotate(360deg);
   }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-  }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-  }
-  @keyframes lds-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
+}

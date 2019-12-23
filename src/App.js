@@ -1,18 +1,15 @@
 import React from "react";
 import MovieList from "./components/MovieList";
-import Header from "./components/Header"
+import Header from "./components/Header";
 import FormAdd from "./components/FormAdd";
-import {movieData} from './components/data'
-import add from './components/add-logo.png'
+import { movieData } from "./components/data";
+import add from "./components/add-logo.png";
 import "./App.css";
-
-
-
 
 class App extends React.Component {
   state = {
     rating: 1,
-    movieData:movieData,
+    movieData: movieData,
     modalIsOpen: false,
     movieAdd: {
       name: "",
@@ -20,42 +17,48 @@ class App extends React.Component {
       image: "",
       rating: ""
     },
-    search:"",
-    isLoading:false
+    search: "",
+    isLoading: false
     /*the state of is loading is false ,
      on event the state change to true
       and the setTimeout will return it state to false 
     */
   };
- 
 
-getVisibileData=()=>{
-  console.log( this.state.movieData.filter(movie=> 
-    this.state.rating <= movie.rating&& 
-    movie.name
-    .toLowerCase()
-    .includes(this.state.search.toLowerCase().trim())))
-  return  this.state.movieData.filter(movie=> 
-    this.state.rating <= movie.rating&& 
-    movie.name
-    .toLowerCase()
-    .includes(this.state.search.toLowerCase().trim()))
-  }
+  getVisibileData = () => {
+    console.log(
+      this.state.movieData.filter(
+        movie =>
+          this.state.rating <= movie.rating &&
+          movie.name
+            .toLowerCase()
+            .includes(this.state.search.toLowerCase().trim())
+      )
+    );
+    return this.state.movieData.filter(
+      movie =>
+        this.state.rating <= movie.rating &&
+        movie.name
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase().trim())
+    );
+  };
+  componentDidMount = () => {
+    setTimeout(() => this.setState({ isLoading: false }), 1500);
+    this.setState({ isLoading: true });
+  };
 
-  
-handelSearch=(e)=>{
-  //fake loading
-  setTimeout(()=>this.setState({isLoading:false}),1500)
-  this.setState({search:e.target.value,isLoading:true});
-  
-  
-}
+  handelSearch = e => {
+    //fake loading
+    setTimeout(() => this.setState({ isLoading: false }), 1500);
+    this.setState({ search: e.target.value, isLoading: true });
+  };
 
-onStarClick=(nextValue)=> {
-  //fake loading
-  setTimeout(()=>this.setState({isLoading:false}),1500)
-  this.setState({ rating: nextValue,isLoading:true });
-}
+  onStarClick = nextValue => {
+    //fake loading
+    setTimeout(() => this.setState({ isLoading: false }), 1500);
+    this.setState({ rating: nextValue, isLoading: true });
+  };
 
   openModal = () => {
     this.setState({ modalIsOpen: true });
@@ -64,14 +67,13 @@ onStarClick=(nextValue)=> {
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   };
-  
+
   handelName = e => {
     this.setState({
       movieAdd: { ...this.state.movieAdd, name: e.target.value }
     });
   };
   handelRating = e => {
-    
     this.setState({
       movieAdd: {
         ...this.state.movieAdd,
@@ -106,39 +108,41 @@ onStarClick=(nextValue)=> {
   handelSubmit = e => {
     e.preventDefault();
     if (Object.values(this.state.movieAdd).indexOf("") > -1) {
-     
       alert("Enter a valid informations");
     } else {
       this.setState({
-        movieData: [...this.state.movieData, this.state.movieAdd],modalIsOpen:false,movieAdd:{name: "",
-        year: "",
-        image: "",
-        rating: ""}
+        movieData: [...this.state.movieData, this.state.movieAdd],
+        modalIsOpen: false,
+        movieAdd: { name: "", year: "", image: "", rating: "" }
       });
-      
     }
   };
 
   render() {
-    
-
     return (
       <div>
-        <Header rating={this.state.rating}  onStarClick={this.onStarClick} handelSearch={this.handelSearch}/>
+        <Header
+          rating={this.state.rating}
+          onStarClick={this.onStarClick}
+          handelSearch={this.handelSearch}
+        />
         <div className="movie-list-container">
-          <MovieList movie={this.getVisibileData()} isLoading={this.state.isLoading}/>
+          <MovieList
+            movie={this.getVisibileData()}
+            isLoading={this.state.isLoading}
+          />
           <button className="addMovie" onClick={this.openModal}>
-            <img className="logoAdd" src={add}  alt="Fail to load"/>
+            <img className="logoAdd" src={add} alt="Fail to load" />
           </button>
-         <FormAdd 
-         modalIsOpen={this.state.modalIsOpen}
-         closeModal={this.closeModal}
-         handelName={this.handelName}
-         handelRating={this.handelRating}
-         handelYear={this.handelYear}
-         handelLink={this.handelLink}
-         handelSubmit={this.handelSubmit}  
-         />
+          <FormAdd
+            modalIsOpen={this.state.modalIsOpen}
+            closeModal={this.closeModal}
+            handelName={this.handelName}
+            handelRating={this.handelRating}
+            handelYear={this.handelYear}
+            handelLink={this.handelLink}
+            handelSubmit={this.handelSubmit}
+          />
         </div>
       </div>
     );
